@@ -5,9 +5,9 @@ import go.flashlight.Flashlight;
 ```
 
 The `lantern-android` repository provides documentation and scripts for
-building a basic [flashlight][1] shared library that exports special methods
-that can be used from Java code, making it possible to run the [flashlight][1]
-client on Android devices.
+building a basic [lantern][1] shared library that exports special methods
+that can be used from Java code, making it possible to run the [lantern][1]
+backend on Android devices.
 
 ```java
 try {
@@ -28,27 +28,27 @@ try {
 
 ### Setting up a development environment
 
-We're going to clone and use the [flashlight-build][5] repository, that
+We're going to clone and use the [lantern][5] repository, that
 project provides us with everything we need to build Lantern tools and
 libraries.
 
 ```sh
 mkdir -p $GOPATH/src/github.com/getlantern
 cd $GOPATH/src/github.com/getlantern
-git clone https://github.com/getlantern/flashlight-build.git
+git clone https://github.com/getlantern/lantern.git
 ```
 
 After cloning the repository use the `setenv.bash` script to export development
 enviromental variables to the current terminal session.
 
 ```
-cd flashlight-build
+cd lantern
 source setenv.bash
 ```
 
 ## Building the Android library
 
-`flashlight-build` will provide you with a copy of `lantern-android`, change
+`lantern` will provide you with a copy of `lantern-android`, change
 directory into `lantern-android` and execute `make` to start compiling our
 shared library:
 
@@ -218,7 +218,7 @@ license that can be found in the LICENSE file.
 </manifest>
 ```
 
-If everything goes OK, you'll have two buttons and you can start `flashlight`
+If everything goes OK, you'll have two buttons and you can start `lantern`
 by touching the *startProxyButton*.
 
 ![Deploy to a device](https://cloud.githubusercontent.com/assets/385670/5712899/db6ddb34-9a7b-11e4-8841-6b6b12e46c27.png)
@@ -258,7 +258,7 @@ redir add tcp:9192:9192
 # OK
 ```
 
-Now you'll be able to connect to the emulator's flashlight proxy through your
+Now you'll be able to connect to the emulator's lantern proxy through your
 local `9192` port:
 
 ```sh
@@ -266,10 +266,10 @@ curl -x 127.0.0.1:9192 https://www.google.com/humans.txt
 # Google is built by a large team of engineers, designers, researchers, robots, and others in many different sites across the globe. It is updated continuously, and built with more tools and technologies than we can shake a stick at. If you'd like to help us out, see google.com/careers.
 ```
 
-[1]: https://github.com/getlantern/flashlight
+[1]: https://github.com/getlantern/lantern
 [2]: https://www.docker.com/
 [3]: http://developer.android.com/tools/studio/index.html
 [4]: http://golang.org/
-[5]: https://github.com/getlantern/flashlight-build
+[5]: https://github.com/getlantern/lantern
 [6]: http://www.gnu.org/software/make/
 [7]: http://mercurial.selenic.com/wiki/Download
